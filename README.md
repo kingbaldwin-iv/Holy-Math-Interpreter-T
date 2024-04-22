@@ -1,7 +1,7 @@
 # Holy-Math-Interpreter-☨
 Header-Only Math Interpreter in C
 
-TO-DO:
+TODO:
 - get rid of external libraries
 - optimize
 - multiplication and division
