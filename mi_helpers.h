@@ -34,11 +34,10 @@ char* parse(char** exp) {
     if(!(flags & (0x1<<1))) r[it++] = '-';
     else r[it++] = '+';
     while(*exp != NULL && **exp != '\0' && (is_digit(**exp) || is_letter(**exp))) {
-        if((is_digit(**exp) && (flags & 0x1)) || (is_letter(**exp) && !(flags & 0x1))) {
+        if((is_digit(**exp) && (flags & 0x1)) || (is_letter(**exp) && !(flags & 0x1)) || it == MAX_TOKEN_LENGTH) {
             free(r); 
             return NULL;
         }
-        if(it == MAX_TOKEN_LENGTH) return NULL;
         r[it++] = **exp;
         (*exp)++;
     }
